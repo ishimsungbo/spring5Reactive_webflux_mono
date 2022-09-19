@@ -1,4 +1,4 @@
-package com.spring5.demo;
+package com.spring5.demo.tobyEX;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
