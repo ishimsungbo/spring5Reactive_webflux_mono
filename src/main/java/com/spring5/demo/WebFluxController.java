@@ -13,6 +13,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
@@ -97,4 +98,22 @@ public class WebFluxController {
         long id;
         String value;
     }
+
+    //요청하면 한방에 다 내보냄...그동안은 블럭킹 상태
+    @GetMapping(value = "/webflux/events7")
+    public List<String> getListString() throws InterruptedException{
+
+        List<String> list = new ArrayList<>();
+
+        for(int i=0 ;i < 10 ; i++){
+
+            Thread.sleep(1000);
+            System.out.println("========" + i);
+            String str ="hello" + i;
+            list.add(str);
+        }
+
+        return list;
+    }
+
 }
