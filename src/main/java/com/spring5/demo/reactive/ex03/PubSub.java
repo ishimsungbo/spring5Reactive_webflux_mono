@@ -24,26 +24,32 @@ public class PubSub {
                 subscriber.onSubscribe(new Subscription() { // ***
                     @Override
                     public void request(long n) {  //빽프러셔
+                        try{
+                            NUMBER_M++;
+                            System.out.println("Subscription 생성자 호출 " + NUMBER_M);
+                            while (n-- > 0) {
+                                if (it.hasNext()) {
+                                    subscriber.onNext(it.next());
+                                } else {
+                                    subscriber.onComplete();
+                                    break;
+                                }
+                            }
+                        }catch (RuntimeException e){
+                            subscriber.onError(e);
+                        }
+
                         /** 이건 한방에 처리하는 것...좀 무식하지
-                        while (true) {
-                            if (it.hasNext()) {
+                         while (true) {
+                             if (it.hasNext()) {
                                 subscriber.onNext(it.next());
-                            } else {
+                             } else {
                                 subscriber.onComplete();
                                 break;
-                            }
-                        }
+                             }
+                         }
                          **/
-                        NUMBER_M++;
-                        System.out.println("Subscription 생성자 호출 " + NUMBER_M);
-                        while (n-- > 0) {
-                            if (it.hasNext()) {
-                                subscriber.onNext(it.next());
-                            } else {
-                                subscriber.onComplete();
-                                break;
-                            }
-                        }
+
                     }
 
                     @Override
@@ -79,8 +85,9 @@ public class PubSub {
             @Override
             public void onNext(Integer item) {
                 System.out.println("onNext : " + item);
+                //System.out.println("===> 버퍼사이즈 조절" + bufferSize);
                 if(--bufferSize <= 0){
-                    System.out.println("버퍼사이즈 조절");
+                    //System.out.println("버퍼사이즈 조절" + bufferSize);
                     bufferSize = 2;
                     this.subscription.request(2);
                 }
@@ -88,7 +95,7 @@ public class PubSub {
 
             @Override
             public void onError(Throwable throwable) {
-                System.out.println("onError()");
+                System.out.println("onError()");  //감당할 수 있는 건가?에 따라 다시 요청?  this.subscription.request(2);
             }
 
             @Override
