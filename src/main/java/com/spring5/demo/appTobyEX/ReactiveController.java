@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 @RestController
 public class ReactiveController {
 
-    @RequestMapping("/")
+    //@RequestMapping("/")
     public String index(){
         System.out.println("index page call");
         return "index page";
