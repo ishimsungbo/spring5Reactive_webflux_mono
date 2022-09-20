@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class MyPub implements Publisher<Integer> {
 
     // 신문사에서 어떤 정보를 들고 있는지 정의를 한다.
-    Iterable<Integer> its = Arrays.asList(1,2,3,4,5,6,7,8,9);
+    Iterable<Integer> its = Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
 
 
     @Override

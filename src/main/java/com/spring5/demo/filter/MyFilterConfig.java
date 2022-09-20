@@ -1,8 +1,5 @@
-package com.spring5.demo.conig;
+package com.spring5.demo.filter;
 
-import com.spring5.demo.EventNotify;
-import com.spring5.demo.filter.MyFilter;
-import com.spring5.demo.filter.MyFilter2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
