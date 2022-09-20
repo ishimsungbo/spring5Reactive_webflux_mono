@@ -1,12 +1,9 @@
 package com.spring5.demo.filter;
 
-import com.spring5.demo.EventNotify;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @Slf4j
 public class MyFilter2 implements Filter{

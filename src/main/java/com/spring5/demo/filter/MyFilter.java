@@ -1,6 +1,5 @@
 package com.spring5.demo.filter;
 
-import com.spring5.demo.EventNotify;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
