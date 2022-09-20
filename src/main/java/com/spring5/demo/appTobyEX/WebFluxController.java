@@ -1,7 +1,6 @@
-package com.spring5.demo.tobyEX;
+package com.spring5.demo.appTobyEX;
 
 
-import com.sun.media.jfxmedia.Media;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

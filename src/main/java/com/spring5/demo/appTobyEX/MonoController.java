@@ -1,14 +1,10 @@
-package com.spring5.demo.tobyEX;
+package com.spring5.demo.appTobyEX;
 
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
-
-import java.util.Locale;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 @RestController
 @Slf4j
