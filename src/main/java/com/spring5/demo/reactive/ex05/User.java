@@ -1,4 +1,4 @@
-package com.spring5.demo.reactive.ex05.ex04;
+package com.spring5.demo.reactive.ex05;
 
 public class User {
     private String userName;

@@ -1,4 +1,4 @@
-package com.spring5.demo.reactive.ex05.ex04;
+package com.spring5.demo.reactive.ex05;
 
 import lombok.extern.slf4j.Slf4j;
 import org.reactivestreams.Publisher;

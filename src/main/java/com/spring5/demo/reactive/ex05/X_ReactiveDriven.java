@@ -1,4 +1,4 @@
-package com.spring5.demo.reactive.ex05.ex04;
+package com.spring5.demo.reactive.ex05;
 
 public class X_ReactiveDriven {
     public static void main(String[] args) {
