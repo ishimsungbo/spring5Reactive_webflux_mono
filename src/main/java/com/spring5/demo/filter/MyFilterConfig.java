@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.Filter;
 
-//@Configuration
+@Configuration
 public class MyFilterConfig {
 
     @Autowired

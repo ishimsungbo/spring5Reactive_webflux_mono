@@ -55,7 +55,7 @@ public class WebFluxController {
                 .take(10);
     }
 
-    @GetMapping(value = "/webflux/events4", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @GetMapping(value = "/webflux/events4", produces = MediaType.TEXT_EVENT_STREAM_VALUE) //스트림을 걸어야 sse가 된다. 아니면 한방에 나옴.
     public Flux<Event> events4() {
         return Flux   //generate 는 생성한다?
                 .<Event, Long>generate(()->1L, (id, sink)->{
@@ -63,7 +63,7 @@ public class WebFluxController {
                     return id +1;
                 })
                 .delayElements(Duration.ofSeconds(1))
-                .take(10);
+                .take(10); //10개 까지만
     }
 
     @GetMapping(value = "/webflux/events5", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
